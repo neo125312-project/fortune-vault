@@ -11,7 +11,9 @@ import type { MetadataRoute } from 'next';
 import { ALL_BOOKS } from '@/lib/classics';
 import { getAllKnowledgeRoutes } from '@/lib/seo/knowledge';
 
-const BASE_URL = 'https://wdyziweidoushu666.com';
+export const dynamic = 'force-static';
+
+const BASE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://neo125312-project.github.io/fortune-vault/').replace(/\/$/, '');
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastmod = new Date('2026-04-28');
