@@ -1,13 +1,15 @@
+import Link from 'next/link';
+
 export const metadata = { title: '關於 · 星樞', description: '星樞 — 個人化紫微斗數排盤與解讀' };
 
 export default function AboutPage() {
   return (
     <>
       <header style={{ position: 'sticky', top: 0, zIndex: 50, background: 'var(--bg-0)', borderBottom: '1px solid var(--bdr)', padding: '14px 24px', display: 'flex', alignItems: 'center', gap: '16px' }}>
-        <a href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: 'var(--tx-3)', textDecoration: 'none' }}>
+        <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: 'var(--tx-3)', textDecoration: 'none' }}>
           <span style={{ fontSize: '16px' }}>‹</span>
           <span>返回首頁</span>
-        </a>
+        </Link>
         <div style={{ width: '1px', height: '20px', background: 'var(--bdr-med)' }} />
         <span style={{ fontSize: '12px', color: 'var(--ac)', letterSpacing: '0.2em' }}>星樞</span>
       </header>

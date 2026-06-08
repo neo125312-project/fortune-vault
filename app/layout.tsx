@@ -1,43 +1,33 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
-import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://neo125312-project.github.io/fortune-vault/';
 
 export const metadata: Metadata = {
-  title: '紫微命盤 · 倪海夏正宗紫微斗數',
-  description: '基於倪海夏正宗紫微斗數體系，AI深度解讀您的命盤格局、大限流年、感情事業財富健康全方位解析',
-  keywords: '紫微斗數, 倪海夏, 倪海廈, 紫微斗數全集, 紫微斗數全書, 骨髓賦, 命盤, 命理, 14主星, 12宮位',
-  metadataBase: new URL('https://wdyziweidoushu666.com'),
+  title: '星樞 · 個人化紫微斗數排盤與解讀',
+  description: '星樞是個人化紫微斗數排盤與解讀平台，提供命盤排盤、四化飛星、格局判定、合盤分析、古籍閱讀器、命理百科。',
+  keywords: '星樞, 紫微斗數, 紫微命盤, 命理, 紫微斗數全集, 紫微斗數全書, 骨髓賦, 14主星, 12宮位, 合盤',
+  metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: '紫微命盤 · 倪海夏正宗紫微斗數',
-    description: '基於倪海夏正宗紫微斗數體系，AI深度解讀您的命盤格局、大限流年、感情事業財富健康全方位解析',
-    url: 'https://wdyziweidoushu666.com',
-    siteName: '紫微研究',
-    locale: 'zh_CN',
+    title: '星樞 · 個人化紫微斗數排盤與解讀',
+    description: '個人化紫微斗數排盤與解讀，14 主星 × 12 宮位完整命盤分析。',
+    url: SITE_URL,
+    siteName: '星樞',
+    locale: 'zh_TW',
     type: 'website',
   },
-  // 站長平臺驗證（拿到 verification code 後填入對應欄位，重新部署即可）
   verification: {
-    // Google Search Console: 在 https://search.google.com/search-console 新增站點後獲取
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || undefined,
-    // Bing Webmaster Tools: 在 https://www.bing.com/webmasters 新增站點後獲取
-    other: {
-      'msvalidate.01': process.env.NEXT_PUBLIC_BING_VERIFICATION || '808FFC6023A2C359B375DD860FEDA856',
-      // 百度站長（等執照下來後）
-      'baidu-site-verification': process.env.NEXT_PUBLIC_BAIDU_VERIFICATION || '',
-      // 360 站長（等執照下來後）
-      '360-site-verification': process.env.NEXT_PUBLIC_360_VERIFICATION || '',
-    },
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="zh-CN" suppressHydrationWarning>
+    <html lang="zh-TW" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('ziwei-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);else document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();` }} />
       </head>
@@ -45,8 +35,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           {children}
         </ThemeProvider>
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );

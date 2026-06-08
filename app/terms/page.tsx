@@ -1,15 +1,17 @@
-export const metadata = { title: '服務條款 · 紫微命盤', description: '紫微命盤服務條款與使用者協議' };
+import Link from 'next/link';
+
+export const metadata = { title: '服務條款 · 星樞', description: '星樞服務條款與使用者協議' };
 
 export default function TermsPage() {
   return (
     <>
       <header style={{ position: 'sticky', top: 0, zIndex: 50, background: 'var(--bg-0)', borderBottom: '1px solid var(--bdr)', padding: '14px 24px', display: 'flex', alignItems: 'center', gap: '16px' }}>
-        <a href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: 'var(--tx-3)', textDecoration: 'none' }}>
+        <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: 'var(--tx-3)', textDecoration: 'none' }}>
           <span style={{ fontSize: '16px' }}>‹</span>
           <span>返回首頁</span>
-        </a>
+        </Link>
         <div style={{ width: '1px', height: '20px', background: 'var(--bdr-med)' }} />
-        <span style={{ fontSize: '12px', color: 'var(--ac)', letterSpacing: '0.2em' }}>紫微命盤</span>
+        <span style={{ fontSize: '12px', color: 'var(--ac)', letterSpacing: '0.2em' }}>星樞</span>
       </header>
       <main style={{ maxWidth: 800, margin: '0 auto', padding: '60px 24px 80px', color: 'var(--tx-1)', lineHeight: 1.8 }}>
         <h1 style={{ fontSize: 28, fontWeight: 600, marginBottom: 8 }}>服務條款</h1>
@@ -46,13 +48,13 @@ export default function TermsPage() {
       <p>本平臺保留隨時調整、暫停或終止部分或全部服務的權利。重大變更將以站內公告或郵件方式通知使用者。</p>
 
       <h2 style={{ fontSize: 18, marginTop: 32, marginBottom: 12 }}>6. 法律適用與爭議解決</h2>
-      <p>本條款適用中華人民共和國法律。若發生爭議，雙方應友好協商；協商不成的，提交本平臺運營主體所在地有管轄權的人民法院訴訟解決。</p>
+      <p>本條款適用中華民國（臺灣）法律。若發生爭議，雙方應先友善協商；協商不成者，合意以臺灣臺北地方法院為第一審管轄法院。</p>
 
       <h2 style={{ fontSize: 18, marginTop: 32, marginBottom: 12 }}>7. 聯絡方式</h2>
-      <p>如有疑問，請透過本平臺公佈的客服微信 / 郵箱聯絡。</p>
+      <p>如有疑問，請透過本平臺公佈的客服信箱聯絡我們。</p>
 
         <p style={{ marginTop: 48, fontSize: 12, color: 'var(--tx-3)' }}>
-          <a href="/privacy" style={{ color: 'var(--ac)' }}>隱私政策</a> · <a href="/" style={{ color: 'var(--ac)' }}>返回首頁</a>
+          <Link href="/privacy" style={{ color: 'var(--ac)' }}>隱私政策</Link> · <Link href="/" style={{ color: 'var(--ac)' }}>返回首頁</Link>
         </p>
       </main>
     </>

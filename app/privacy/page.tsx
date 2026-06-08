@@ -1,15 +1,17 @@
-export const metadata = { title: '隱私政策 · 紫微命盤', description: '紫微命盤隱私政策' };
+import Link from 'next/link';
+
+export const metadata = { title: '隱私政策 · 星樞', description: '星樞隱私政策' };
 
 export default function PrivacyPage() {
   return (
     <>
       <header style={{ position: 'sticky', top: 0, zIndex: 50, background: 'var(--bg-0)', borderBottom: '1px solid var(--bdr)', padding: '14px 24px', display: 'flex', alignItems: 'center', gap: '16px' }}>
-        <a href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: 'var(--tx-3)', textDecoration: 'none' }}>
+        <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: 'var(--tx-3)', textDecoration: 'none' }}>
           <span style={{ fontSize: '16px' }}>‹</span>
           <span>返回首頁</span>
-        </a>
+        </Link>
         <div style={{ width: '1px', height: '20px', background: 'var(--bdr-med)' }} />
-        <span style={{ fontSize: '12px', color: 'var(--ac)', letterSpacing: '0.2em' }}>紫微命盤</span>
+        <span style={{ fontSize: '12px', color: 'var(--ac)', letterSpacing: '0.2em' }}>星樞</span>
       </header>
       <main style={{ maxWidth: 800, margin: '0 auto', padding: '60px 24px 80px', color: 'var(--tx-1)', lineHeight: 1.8 }}>
         <h1 style={{ fontSize: 28, fontWeight: 600, marginBottom: 8 }}>隱私政策</h1>
@@ -63,7 +65,7 @@ export default function PrivacyPage() {
       <p>本政策可能不定期更新。重大變更將以顯著方式通知。繼續使用即表示同意更新後的版本。</p>
 
         <p style={{ marginTop: 48, fontSize: 12, color: 'var(--tx-3)' }}>
-          <a href="/terms" style={{ color: 'var(--ac)' }}>服務條款</a> · <a href="/" style={{ color: 'var(--ac)' }}>返回首頁</a>
+          <Link href="/terms" style={{ color: 'var(--ac)' }}>服務條款</Link> · <Link href="/" style={{ color: 'var(--ac)' }}>返回首頁</Link>
         </p>
       </main>
     </>
